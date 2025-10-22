@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOC Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f3; text-align: center; padding: 40px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #fff; margin: 10px auto; width: 400px; padding: 15px; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: #007bff; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Generated NOCs</h1>
+    <ul>
+        {% for file in files %}
+        <li><a href="{{ url_for('download', filename=file) }}">{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Generate Another NOC</a>
+</body>
+</html>
